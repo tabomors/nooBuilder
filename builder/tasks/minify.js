@@ -1,13 +1,13 @@
 'use strict';
 
-var 
-    gulp         = require('gulp'), // Подключаем Gulp    
-    cssnano      = require('gulp-cssnano'), // Подключаем пакет для минификации CSS
-    rename       = require('gulp-rename'); // Подключаем библиотеку для переименования файлов
+var gulp         = require('gulp'), // Подключаем Gulp
+    csso         = require('gulp-csso'), // Подключаем пакет для минификации CSS
+    sourcemaps	 = require('gulp-sourcemaps');
 
 gulp.task('minify', ['scss'], function() {
   return gulp.src('src/css/main.css') // Выбираем файл для минификации
-    .pipe(cssnano()) // Сжимаем
-    .pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
-    .pipe(gulp.dest('src/css')); // Выгружаем в папку src/css
+  		.pipe(sourcemaps.init())
+  		.pipe(csso())
+  		.pipe(sourcemaps.write('.'))
+  		.pipe(gulp.dest('dist/css/'));
 });

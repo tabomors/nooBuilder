@@ -1,7 +1,6 @@
 'use strict';
 
-var 
-    gulp         = require('gulp'), // Подключаем Gulp
+var gulp         = require('gulp'), // Подключаем Gulp
     imagemin     = require('gulp-imagemin'), // Подключаем библиотеку для работы с изображениями
     pngquant     = require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
     cache        = require('gulp-cache'); // Подключаем библиотеку кеширования

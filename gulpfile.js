@@ -1,5 +1,4 @@
 'use strict';
 
-var 
-    requireDir = require('require-dir'),
-    tasks = requireDir('builder/tasks');
+var requireDir = require('require-dir'),
+    tasks      = requireDir('builder/tasks');
