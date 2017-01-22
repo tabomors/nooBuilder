@@ -1,15 +1,19 @@
-'use strict';
+(() => {
+  'use strict';
 
-var gulp         = require('gulp'), // Подключаем Gulp
-    browserSync  = require('browser-sync'), // Подключаем BrowserSync
-    concat       = require('gulp-concat'), // Подключаем gulp-concat (для конкатенации файлов)
-    uglify       = require('gulp-uglifyjs'), // Подключаем gulp-uglifyjs (для сжатия JS)
-    sourcemaps	 = require("gulp-sourcemaps");
+  const gulp = require('gulp'), // Подключаем Gulp
+        browserSync = require('browser-sync'), // Подключаем BrowserSync
+        concat = require('gulp-concat'), // Подключаем gulp-concat (для конкатенации файлов)
+        uglify = require('gulp-uglify'),
+        sourcemaps = require('gulp-sourcemaps'),
+        rename = require('gulp-rename');
 
-gulp.task('uglify', function() {
-  return gulp.src('src/js/main.js')
-    .pipe(uglify('main.min.js', {
-      outSourceMap: true
-    }))
-    .pipe(gulp.dest('dist/js')); // Выгружаем в папку src/js
-});
+  gulp.task('uglify', () => {
+    return gulp.src('src/js/bundle.js')
+      .pipe(sourcemaps.init())
+        .pipe(uglify())
+        .pipe(rename('bundle.min.js'))
+      .pipe(sourcemaps.write('../maps'))
+      .pipe(gulp.dest('dist/js'));
+  });
+})();

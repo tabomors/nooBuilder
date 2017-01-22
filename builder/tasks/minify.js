@@ -1,13 +1,17 @@
-'use strict';
+(() => {
+  'use strict';
 
-var gulp         = require('gulp'), // Подключаем Gulp
-    csso         = require('gulp-csso'), // Подключаем пакет для минификации CSS
-    sourcemaps	 = require('gulp-sourcemaps');
+  const gulp = require('gulp'), // Подключаем Gulp
+        csso = require('gulp-csso'), // Подключаем пакет для минификации CSS
+        sourcemaps = require('gulp-sourcemaps'),
+        rename = require('gulp-rename');
 
-gulp.task('minify', ['scss'], function() {
-  return gulp.src('src/css/main.css') // Выбираем файл для минификации
-  		.pipe(sourcemaps.init())
-  		.pipe(csso())
-  		.pipe(sourcemaps.write('.'))
-  		.pipe(gulp.dest('dist/css/'));
-});
+  gulp.task('minify', ['scss'], () => {
+    return gulp.src('src/css/main.css') // Выбираем файл для минификации
+      .pipe(sourcemaps.init())
+        .pipe(csso())
+        .pipe(rename('main.min.css'))
+      .pipe(sourcemaps.write('../maps'))
+      .pipe(gulp.dest('dist/css/'));
+  });
+})();

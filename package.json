@@ -1,6 +1,6 @@
 {
   "name": "myproject",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "My Project",
   "main": "index.js",
   "scripts": {
@@ -10,11 +10,11 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.11.1",
+    "browserify": "^13.3.0",
     "del": "^2.2.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-cache": "^0.4.2",
     "gulp-concat": "^2.6.0",
-    "gulp-cssnano": "^2.1.1",
     "gulp-csso": "^2.0.0",
     "gulp-imagemin": "^2.4.0",
     "gulp-notify": "^2.2.0",
@@ -23,8 +23,10 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.2.0",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^2.0.0",
     "gulp-uglifyjs": "^0.6.2",
     "imagemin-pngquant": "^4.2.2",
-    "require-dir": "^0.3.0"
+    "require-dir": "^0.3.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

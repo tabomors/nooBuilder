@@ -1,4 +1,6 @@
-'use strict';
+(function() {
+  'use strict';
 
-var requireDir = require('require-dir'),
-    tasks      = requireDir('builder/tasks');
+  const requireDir = require('require-dir'),
+        tasks = requireDir('builder/tasks');
+})();

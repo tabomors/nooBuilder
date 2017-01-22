@@ -1,7 +1,7 @@
-'use strict';
+(() => {
+  'use strict';
 
-var gulp = require('gulp'), // Подключаем Gulp
-    scss = require('gulp-sass'),
-    pug  = require('gulp-pug');
+  const gulp = require('gulp'); // Подключаем Gulp
 
-gulp.task('default', ['pug', 'scss', 'watch']);
+  gulp.task('default', ['pug', 'scss', 'browserify', 'server', 'watch']);
+})();
