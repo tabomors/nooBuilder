@@ -9,7 +9,7 @@
   gulp.task('pug', () => {
     return gulp.src('src/pug/pages/*.pug')
       .pipe(pug({ pretty: true }))
-      .on('error', nontify.onError(function(error) {
+      .on('error', nontify.onError(error => {
         return {
           title: 'Pug',
           message: error.message

@@ -508,3 +508,9 @@ body {
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1; }
+
+.header {
+  background-color: #ccc; }
+
+.footer {
+  background-color: #ccc; }
